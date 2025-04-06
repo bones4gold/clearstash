@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClearStash Compliance Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ClearStash Compliance Tracker</h1>
+    <p>Track your launch progress across regions</p>
+  </header>
+
+  <main>
+    <section class="region-selector">
+      <label for="region">Select Region:</label>
+      <select id="region">
+        <option value="">-- Choose Region --</option>
+        <option value="usa-idaho">USA–Idaho</option>
+        <option value="UAE-Dubai">UAE–Dubai</option>
+        <option value="SG-Singapore">Singapore</option>
+        <option value="NG- Nigeria">Nigeria</option>
+        <option value="PT- Portugal">Portugal</option>
+        <option value="BH- Bahrain">Bahrain</option>
+        <option value="AU- Australia">Australia</option>
+        <option value="GE- Germany">Germany</option>
+        <option value="USA STRICT LIST">USA–Strict</option>
+      </select>
+    </section>
+
+    <section id="task-list" class="task-list">
+      <!-- Tasks will be loaded here -->
+    </section>
+    <div id="ai-assistant" class="ai-box">
+      <h2>Ask the Assistant</h2>
+      <textarea id="userQuestion" placeholder="Type your question..." rows="3"></textarea>
+      <button onclick="handleAIQuestion()">Ask AI</button>
+      <p id="aiResponse"></p>
+    </div>
+    
+  </main>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore-compat.js"></script>
+  
+
+  <!-- Main logic -->
+  <script src="main.js"></script>
+  <section id="ai-chat">
+    <h3>💬 Ask the ClearStash Assistant</h3>
+    <input type="text" id="userQuestion" placeholder="Type your question..." />
+    <button onclick="handleAIQuestion()">Ask</button>
+    <p><strong>AI Response:</strong></p>
+    <p id="aiResponse" style="white-space: pre-wrap; color: #ccc;"></p>
+  </section>
+  
+</body>
+</html>
